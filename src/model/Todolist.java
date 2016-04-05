@@ -14,8 +14,10 @@ import java.util.Date;
 public class Todolist implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@GeneratedValue(strategy=GenerationType.IDENTITY) 
 	@Id
 	private long todoid;
+	
 
 	@Temporal(TemporalType.DATE)
 	private Date datecompleted;
