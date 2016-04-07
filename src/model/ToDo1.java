@@ -1,10 +1,12 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 public class ToDo1 {
-	public TypedQuery <Todolist> Find1(long input)
+	public List <Todolist> Find1(long input)
 	{
         EntityManager em1 = DBUtil.getEmFactory().createEntityManager();
         
@@ -12,7 +14,7 @@ public class ToDo1 {
 				+" ON u.userid = t.user.userid"
 				+" where t.user.userid =:userid",Todolist.class)
         		
-                .setParameter("userid", input);
+                .setParameter("userid", input).getResultList();
            
     }
 }

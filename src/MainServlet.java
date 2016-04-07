@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.StatusDetail1;
+
 import model.ToDo1;
 import model.Todolist;
 import model.User;
@@ -55,7 +55,7 @@ public class MainServlet extends HttpServlet {
          long input = Long.parseLong((user_input));
          System.out.println("User Input in long is: "+input);
          
-         List<User> list=info.Find(input).getResultList();
+         List<User> list=info.Find(input);
          
          System.out.println("Lets see what this is "+list);
        
@@ -88,7 +88,7 @@ public class MainServlet extends HttpServlet {
         
         String output2="",username="",Task="",Desc="",Priority="", StatDesc="";
          
-         List<Todolist> list1=info1.Find1(input).getResultList();
+         List<Todolist> list1=info1.Find1(input);
          
          System.out.println("Lets see what this is "+list1);
        
